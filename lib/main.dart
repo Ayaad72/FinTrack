@@ -18,7 +18,7 @@ class SpendWiseApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SpendWise',
+      title: 'FinTrack',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
@@ -311,10 +311,10 @@ class _FinanceHomePageState extends State<FinanceHomePage> {
         foregroundColor: Colors.black,
         title: Column(
           children: const [
-            Text('SpendWise', style: TextStyle(fontWeight: FontWeight.bold)),
+            Text('FinTrack', style: TextStyle(fontWeight: FontWeight.bold)),
             SizedBox(height: 4),
             Text(
-              'Personal Budget & Expense Dashboard',
+              'Personal Budget & Expense Tracker',
               style: TextStyle(fontSize: 12, color: Colors.black54),
             ),
           ],
