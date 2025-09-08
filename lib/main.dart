@@ -314,7 +314,7 @@ class _FinanceHomePageState extends State<FinanceHomePage> {
             Text('FinTrack', style: TextStyle(fontWeight: FontWeight.bold)),
             SizedBox(height: 4),
             Text(
-              'Personal Budget & Expense Tracker',
+              'Personal Budget & Expense Dashboard',
               style: TextStyle(fontSize: 12, color: Colors.black54),
             ),
           ],
