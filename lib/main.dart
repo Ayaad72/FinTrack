@@ -325,7 +325,7 @@ class _FinanceHomePageState extends State<FinanceHomePage> {
           padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 8),
           child: Column(
             children: [
-              // khfiytfiytfyt Card
+              // ufdugfudgfduhgdugfdgy Card
               AnimatedContainer(
                 duration: const Duration(milliseconds: 350),
                 padding: const EdgeInsets.all(16),
