@@ -12,7 +12,9 @@ void main() async {
     final loggedIn = await LocalStorage.isLoggedIn();
     runApp(SpendWiseApp(startOnDashboard: loggedIn == true));
   } catch (e) {
-    // If dsaddddddddddddddddd's any error, start with login screen
+    // If dassssssssssssssssssssssssssssssssss
+    //dasdsadasd
+    //dasda's any error, start with login screen
     runApp(const SpendWiseApp(startOnDashboard: false));
   }
 }
