@@ -39,8 +39,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Define your custom colors
+    final Color backgroundColor = const Color(0xFF232946); // Deep blue
+    final Color cardColor = const Color(0xFF393E5B); // Slightly lighter blue
+    final Color accentColor = const Color(0xFFF4D35E); // Accent yellow
+    final Color textColor = Colors.white; // White for contrast
+    final Color fieldFill = const Color(0xFF232946); // Match the background
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Profile')),
+      backgroundColor: backgroundColor,
+      appBar: AppBar(
+        title: const Text('Profile'),
+        backgroundColor: cardColor,
+        foregroundColor: accentColor,
+        elevation: 0,
+        iconTheme: IconThemeData(color: accentColor),
+        titleTextStyle: const TextStyle(
+          color: Color(0xFFF4D35E),
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -49,35 +68,92 @@ class _ProfileScreenState extends State<ProfileScreen> {
               onTap: _pickImage,
               child: CircleAvatar(
                 radius: 50,
+                backgroundColor: cardColor,
                 backgroundImage: image != null ? FileImage(image!) : null,
                 child: image == null
-                    ? const Icon(Icons.camera_alt, size: 40)
+                    ? Icon(Icons.camera_alt, size: 40, color: accentColor)
                     : null,
               ),
             ),
             const SizedBox(height: 20),
             TextField(
-              decoration: const InputDecoration(labelText: 'Name'),
+              style: TextStyle(color: textColor),
+              decoration: InputDecoration(
+                labelText: 'Name',
+                labelStyle: TextStyle(color: accentColor),
+                filled: true,
+                fillColor: fieldFill,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: accentColor),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: accentColor, width: 2),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
               controller: TextEditingController(text: name),
               onChanged: (v) => name = v,
             ),
             const SizedBox(height: 10),
             TextField(
-              decoration: const InputDecoration(labelText: 'Email'),
+              style: TextStyle(color: textColor),
+              decoration: InputDecoration(
+                labelText: 'Email',
+                labelStyle: TextStyle(color: accentColor),
+                filled: true,
+                fillColor: fieldFill,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: accentColor),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: accentColor, width: 2),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
               controller: TextEditingController(text: email),
               onChanged: (v) => email = v,
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () async {
-                await LocalStorage.updateUser(name: name, email: email);
-                if (mounted) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Profile updated!')),
-                  );
-                }
-              },
-              child: const Text('Save'),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(accentColor),
+                  foregroundColor: MaterialStateProperty.all(backgroundColor),
+                  padding: MaterialStateProperty.all(
+                    const EdgeInsets.symmetric(vertical: 14),
+                  ),
+                  textStyle: MaterialStateProperty.all(
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  elevation: MaterialStateProperty.all(2),
+                ),
+                onPressed: () async {
+                  await LocalStorage.updateUser(name: name, email: email);
+                  if (mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: const Text('Profile updated!'),
+                        backgroundColor: cardColor,
+                        behavior: SnackBarBehavior.floating,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        duration: const Duration(seconds: 2),
+                        elevation: 3,
+                      ),
+                    );
+                  }
+                },
+                child: const Text('Save'),
+              ),
             ),
           ],
         ),
