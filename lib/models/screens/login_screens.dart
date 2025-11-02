@@ -13,7 +13,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final emailCtrl = TextEditingController();
   final passCtrl = TextEditingController();
-  // Hello worfffffffffffffffffffffffggggld my name is Akshay
+  // Hello worfffffffffffffgggffffffffffggggld my name is Akshay
   void _login() async {
     final success = await LocalStorage.login(emailCtrl.text, passCtrl.text);
     if (success) {
