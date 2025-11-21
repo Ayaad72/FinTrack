@@ -12,7 +12,8 @@ class LocalStorage {
     await prefs.setString('password', password);
     await prefs.setBool('loggedIn', true);
   }
-// Hey Comment
+
+  // Hey Commentawesadasdas
   static Future<bool> login(String email, String password) async {
     final prefs = await SharedPreferences.getInstance();
     final savedEmail = prefs.getString('email');
@@ -42,10 +43,7 @@ class LocalStorage {
     };
   }
 
-  static Future<void> updateUser({
-    String? name,
-    String? email,
-  }) async {
+  static Future<void> updateUser({String? name, String? email}) async {
     final prefs = await SharedPreferences.getInstance();
     if (name != null) await prefs.setString('name', name);
     if (email != null) await prefs.setString('email', email);
