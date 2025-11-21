@@ -13,7 +13,7 @@ class LocalStorage {
     await prefs.setBool('loggedIn', true);
   }
 
-  // Hey ewwwwwwwwwwwwwwwwwwwwwww
+  // Hey Commentawesadasdas
   static Future<bool> login(String email, String password) async {
     final prefs = await SharedPreferences.getInstance();
     final savedEmail = prefs.getString('email');
