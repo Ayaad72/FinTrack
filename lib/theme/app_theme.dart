@@ -3,11 +3,16 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    scaffoldBackgroundColor: Colors.white,
-    primaryColor: Colors.blueAccent,
+    scaffoldBackgroundColor: const Color(0xfff6f4ee), // Creamy background
+    primaryColor: Colors.deepPurpleAccent,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.deepPurple,
+      primary: Colors.deepPurpleAccent,
+      secondary: const Color(0xFF6B4EFF),
+    ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.white,
-      elevation: 2,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
       centerTitle: true,
       titleTextStyle: TextStyle(
         color: Colors.black87,
@@ -22,37 +27,50 @@ class AppTheme {
       headlineSmall: TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.bold,
-        fontSize: 22,
+        fontSize: 24,
       ),
     ),
     cardTheme: CardThemeData(
       color: Colors.white,
-      elevation: 6,
-      shadowColor: Colors.grey.withOpacity(0.15),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+        side: BorderSide(color: Colors.grey.shade200),
+      ),
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: Colors.grey[100],
+      fillColor: Colors.white,
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(16),
+        borderSide: BorderSide(color: Colors.grey.shade200),
       ),
-      hintStyle: const TextStyle(color: Colors.black45),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16),
+        borderSide: BorderSide(color: Colors.grey.shade200),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: Colors.deepPurpleAccent, width: 2),
+      ),
+      hintStyle: TextStyle(color: Colors.grey[400]),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.deepPurpleAccent,
       foregroundColor: Colors.white,
+      elevation: 4,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.deepPurpleAccent,
         foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-        textStyle: const TextStyle(fontWeight: FontWeight.bold),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        textStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        elevation: 2,
       ),
     ),
-    iconTheme: const IconThemeData(color: Colors.blueAccent),
+    iconTheme: const IconThemeData(color: Colors.deepPurpleAccent),
   );
 }

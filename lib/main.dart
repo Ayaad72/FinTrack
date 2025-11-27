@@ -27,7 +27,7 @@ class SpendWiseApp extends StatelessWidget {
     return MaterialApp(
       title: 'FinTrack',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme, // 👈 Apply elegant white theme
+      theme: AppTheme.lightTheme, 
       home: startOnDashboard ? const DashboardScreen() : const LoginScreen(),
     );
   }
