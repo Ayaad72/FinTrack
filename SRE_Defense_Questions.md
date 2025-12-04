@@ -119,7 +119,7 @@ Can you provide this complete trace? What happens if this requirement changes (e
 - Postconditions
 - Exception handling
 
-Now convert this into a utfuyuufufuyfhgfhgf story with acceptance criteria. Which format is better for FinTrack and why?
+Now convert this into a user story with acceptance criteria. Which format is better for FinTrack and why?
 
 **Expected Answer Points:**
 - Proper use case format
