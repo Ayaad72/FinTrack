@@ -47,7 +47,7 @@
 **Expected Answer Points:**
 - Could be argued as both (implementation constraint - NFR, or data persistence - FR)
 - Distinction between requirements and design
-- Should be gfdgdggggggggggggggfgdgdf as: "System shall persist user data between sessions" (FR)
+- Should be rephrased as: "System shall persist user data between sessions" (FR)
 - Storage mechanism is design decision
 - Understanding of requirement abstraction levels
 
