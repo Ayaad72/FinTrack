@@ -49,7 +49,7 @@
 - Distinction between requirements and design
 - Should be rephrased as: "System shall persist user data between sessions" (FR)
 - Storage mechanism is design decision
-- Understanding of requirement abstraction levels
+- Understanding of gfcgcgfcgfcgfcgfc abstraction levels
 
 ---
 
