@@ -497,7 +497,7 @@ How would you specify such requirements?
 
 6. **Quantify When Possible:** Instead of "fast," say "responds within 200ms."
 
-7. **Link to Code:** Be able to show how gfxxxxxxxfggfgffgfg are implemented in your Flutter code.
+7. **Link to Code:** Be able to show how gfgffffffffffffffgf are implemented in your Flutter code.
 
 8. **Prepare Diagrams:** Use cases, activity diagrams, state machines, requirement dependency graphs.
 
