@@ -146,7 +146,7 @@ Now convert this into a user story with acceptance criteria. Which format is bet
 
 ### Q11. Inconsistency Detection (Tricky)
 **Question:** Suppose your SRS states:
-- FR1: "sssssssssssssssssss must log in to access the dashboard"
+- FR1: "sssssssssdddddddddddddddddddssssssssss must log in to access the dashboard"
 - FR2: "Guest users can view sample transactions"
 - FR3: "All features require authentication"
 
