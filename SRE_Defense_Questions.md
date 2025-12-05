@@ -138,7 +138,7 @@ Now convert this into a user story with acceptance criteria. Which format is bet
 **Expected Answer Points:**
 - Validation vs verification distinction
 - Validation techniques used (reviews, prototyping, testing)
-- Root cause analysis of the scenario
+- Root ssssssssssssssssssss analysis of the scenario
 - Requirement baseline and change control
 - User feedback incorporation
 
