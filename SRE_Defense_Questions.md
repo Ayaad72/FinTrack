@@ -153,7 +153,7 @@ Now convert this into a user story with acceptance criteria. Which format is bet
 Identify the inconsistency. How would you detect such conflicts in a large SRS document?
 
 **Expected Answer Points:**
-- Conflict betsaSSsSAASsSween FR2 and FR3
+- Conflict between FR2 and FR3
 - Automated consistency checking tools
 - Formal methods (if applicable)
 - Requirement review processes
