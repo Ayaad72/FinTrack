@@ -138,7 +138,7 @@ Now convert this into a user story with acceptance criteria. Which format is bet
 **Expected Answer Points:**
 - Validation vs verification distinction
 - Validation techniques used (reviews, prototyping, testing)
-- Root ssssssssssssssssssss analysis of the scenario
+- Root cause analysis of the scenario
 - Requirement baseline and change control
 - User feedback incorporation
 
@@ -146,11 +146,11 @@ Now convert this into a user story with acceptance criteria. Which format is bet
 
 ### Q11. Inconsistency Detection (Tricky)
 **Question:** Suppose your SRS states:
-- FR1: "sssssssssdddddddddddddddddddssssssssss must log in to access the dashboard"
+- FR1: "User must log in to access the dashboard"
 - FR2: "Guest users can view sample transactions"
 - FR3: "All features require authentication"
 
-Identify the dassssssssssssssssss. How would you detect such conflicts in a large SRS document?
+Identify the inconsistency. How would you detect such conflicts in a large SRS document?
 
 **Expected Answer Points:**
 - Conflict between FR2 and FR3
