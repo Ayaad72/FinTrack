@@ -146,14 +146,14 @@ Now convert this into a user story with acceptance criteria. Which format is bet
 
 ### Q11. Inconsistency Detection (Tricky)
 **Question:** Suppose your SRS states:
-- FR1: "Udasdasdasdasdaser must log in to access the dashboard"
+- FR1: "User must log in to access the dashboard"
 - FR2: "Guest users can view sample transactions"
 - FR3: "All features require authentication"
 
 Identify the inconsistency. How would you detect such conflicts in a large SRS document?
 
 **Expected Answer Points:**
-- Conflict between FR2 and FR3
+- Conflict betsaSSsSAASsSween FR2 and FR3
 - Automated consistency checking tools
 - Formal methods (if applicable)
 - Requirement review processes
