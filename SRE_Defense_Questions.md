@@ -150,7 +150,7 @@ Now convert this into a user story with acceptance criteria. Which format is bet
 - FR2: "Guest users can view sample transactions"
 - FR3: "All features require authentication"
 
-Identify the inconsistency. How would you detect such conflicts in a large SRS document?
+Identify the incodddddddddddddddnsistency. How would you detect such conflicts in a large SRS document?
 
 **Expected Answer Points:**
 - Conflict between FR2 and FR3
