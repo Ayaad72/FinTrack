@@ -157,7 +157,7 @@ Identify the inconsistency. How would you detect such conflicts in a large SRS d
 - Automated consistency checking tools
 - Formal methods (if applicable)
 - Requirement review processes
-- Conflict dasddddddddddassssssssssssdddddddddddd strategies
+- Conflict dasdasdasdsadsad strategies
 
 ---
 
