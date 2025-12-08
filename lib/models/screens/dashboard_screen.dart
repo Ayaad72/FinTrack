@@ -82,9 +82,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
     final title = _titleController.text.trim();
     final amount = double.tryParse(_amountController.text.trim());
     if (title.isEmpty || amount == null || amount <= 0) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Please enter valid data')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text('Please enter valid data'),
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          margin: const EdgeInsets.all(16),
+        ),
+      );
       return;
     }
 
@@ -109,10 +116,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
       _transactions.removeWhere((t) => t['id'] == id);
     });
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Transaction deleted'),
+      SnackBar(
+        content: const Text('Transaction deleted'),
         backgroundColor: Colors.redAccent,
-        duration: Duration(milliseconds: 900),
+        duration: const Duration(milliseconds: 1500),
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        margin: const EdgeInsets.all(16),
       ),
     );
   }
@@ -920,7 +932,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               // 4. Transaction List or Empty State
               if (_transactions.isEmpty)
                 Container(
-                  margin: const EdgeInsets.symmetric(vertical: 40),
+                  margin: const EdgeInsets.only(top: 80, bottom: 40, left: 0, right: 0),
                   padding: const EdgeInsets.all(40),
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -934,6 +946,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ],
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
                         padding: const EdgeInsets.all(24),

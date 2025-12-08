@@ -42,7 +42,14 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
   void _login() async {
     if (emailCtrl.text.isEmpty || passCtrl.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please enter email and password')),
+        SnackBar(
+          content: const Text('Please enter email and password'),
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          margin: const EdgeInsets.all(16),
+        ),
       );
       return;
     }
