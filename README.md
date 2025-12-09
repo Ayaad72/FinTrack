@@ -322,7 +322,7 @@ flutter build ios
 
 ## 📄 License
 
-This project is develoddddddddddddddddddddped as part of academic coursework for Software Requirement Engineering.
+This project is developed as part of academic coursework for Software Requirement Engineering.
 
 ---
 
