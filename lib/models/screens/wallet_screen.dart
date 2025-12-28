@@ -62,7 +62,7 @@ class _WalletScreenState extends State<WalletScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Mdddddddddssssdddddddddddddddddddddddddddddddddxxdddddddddddddddddsssssssssssssddddsssssssddddddddain Balance Card
+            // Mdddddddddssssddddddddddddddddddddddfffdddddddddddxxdddddddddddddddddsssssssssssssddddsssssssddddddddain Balance Card
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(28),
