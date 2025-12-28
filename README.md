@@ -1,329 +1,219 @@
-# FinTrack - Personal Finance Management Application
-
-**A comprehensive Flutter-based mobile application for tracking personal finances, managing transactions, and analyzing spending patterns.**
-
----
-
-## 📱 Project Overview
-
-**FinTrack** is a cross-platform mobile application built with Flutter that empowers users to take control of their personal finances. The app provides intuitive transaction tracking, detailed analytics, wallet management, and comprehensive financial insights.
-
-### Key Features
-- 🔐 **User Authentication** - Secure login and signup system with local storage
-- 💰 **Transaction Management** - Add, edit, and delete income/expense transactions
-- 📊 **Analytics Dashboard** - Visual representation of spending patterns with charts
-- 👛 **Wallet Management** - Track multiple accounts and balances
-- 🔔 **Notifications** - Stay updated with financial activities
-- 📈 **Reports & Insights** - Detailed transaction history and categorization
-- 👤 **Profile Management** - Personalized user settings and preferences
-
-### Technology Stack
-- **Framework:** Flutter 3.9.0
-- **Language:** Dart
-- **State Management:** StatefulWidget with local state
-- **Data Persistence:** SharedPreferences (local storage)
-- **Charts:** fl_chart ^0.69.0
-- **Image Handling:** image_picker ^1.2.0
-- **UI Design:** Material Design with custom light theme
+# FinTrack - 10 Minute Video Presentation Script
+**Presenter: Ayaad (Team Lead)**
 
 ---
 
-## 🎥 10-MINUTE VIDEO PRESENTATION SCRIPT
+## 🎥 **[0:00 - 0:30] Introduction (30 seconds)**
 
-### **[0:00 - 0:30] Introduction (30 seconds)**
+**Ayaad:**
 
-**Speaker 1 (Team Lead):**
-
-> "Hello everyone! Welcome to our FinTrack project presentation. I'm [Name], and I'm joined by my team members [Names]. Today, we'll be presenting FinTrack - a personal finance management application built with Flutter. Over the next 10 minutes, we'll walk you through our application's architecture, demonstrate its features, and explain both the backend and frontend implementation. Let's get started!"
+> "Assalam-o-Alaikum aur hello everyone! Mera naam Ayaad hai, aur main is FinTrack project ka Team Lead hoon. Meray saath kaam kar rahi hain Anoosha Ali, jo is project mein QA Engineer ki role mein hain. Anoosha ne development ke doran aur baad mein har ek component aur unit ko bohot achhe se test kiya hai taake yeh ensure ho sake ke hamara application bug-free aur high quality ka ho.
+> 
+> Aaj main aap sab ko present karunga FinTrack - yeh ek personal finance management application hai jo Flutter mein banai gayi hai. Aglay 10 minutes mein, main aap ko dikhaunga hamaray application ka architecture, demonstrate karunga iski features, aur explain karunga backend aur frontend implementation. Toh chaliye shuru karte hain!"
 
 ---
 
-### **[0:30 - 2:00] Project Overview & Architecture (90 seconds)**
+## **[0:30 - 2:00] Project Overview & Architecture (90 seconds)**
 
-**Speaker 1 (Team Lead):**
+**Ayaad:**
 
-> "FinTrack is designed to help users manage their personal finances efficiently. The application follows a clean architecture pattern with clear separation of concerns."
+> "FinTrack ko is liye design kiya gaya hai ke users apni personal finances ko efficiently manage kar sakein. Yeh application clean architecture pattern follow karta hai jismein clear separation of concerns hai."
 
-**[Show project structure on screen]**
+**[Screen par project structure dikhao]**
 
-> "Our project structure consists of:
-> - **Models** - Data structures for transactions and user information
-> - **Screens** - Nine main UI screens including login, dashboard, analytics, and more
+> "Hamara project structure kuch is tarah se hai:
+> - **Models** - Yeh transactions aur user information ke liye data structures hain
+> - **Screens** - Nou main UI screens hain jismein login, dashboard, analytics, aur bohot kuch shamil hai
 > - **Widgets** - Reusable UI components
-> - **Utils** - Helper classes for local storage and data management
-> - **Theme** - Centralized theming system for consistent UI"
+> - **Utils** - Local storage aur data management ke liye helper classes
+> - **Theme** - Consistent UI ke liye centralized theming system
+> 
+> Har ek component ko Anoosha ne development ke doran rigorously test kiya hai taake maximum reliability ensure ho sake."
 
-**Speaker 2 (Backend Developer):**
+> "Ab main aap ko backend architecture explain karta hoon. Agarchay FinTrack ek mobile-first application hai, lekin humne ek robust local backend system implement kiya hai jo SharedPreferences use karta hai data persistence ke liye."
 
-> "Let me explain the backend architecture. Although FinTrack is a mobile-first application, we've implemented a robust local backend system using SharedPreferences for data persistence."
+**[Code dikhao: lib/models/utils/local_storage.dart]**
 
-**[Show code: lib/models/utils/local_storage.dart]**
-
-> "Our backend layer handles:
-> 1. **User Authentication** - Login state management with secure local storage
-> 2. **Data Persistence** - All transactions, user profiles, and settings are stored locally
-> 3. **Data Models** - We have structured models for transactions with properties like amount, category, date, type (income/expense), and description
-> 4. **CRUD Operations** - Complete Create, Read, Update, Delete functionality for all entities"
+> "Hamara backend layer yeh sab handle karta hai:
+> 1. **User Authentication** - Secure local storage ke saath login state management
+> 2. **Data Persistence** - Saray transactions, user profiles, aur settings locally store hotay hain
+> 3. **Data Models** - Hamaray paas structured models hain transactions ke liye jismein amount, category, date, type (income ya expense), aur description jaise properties hain
+> 4. **CRUD Operations** - Complete Create, Read, Update, Delete functionality tamam entities ke liye"
 
 ---
 
-### **[2:00 - 4:00] Backend Deep Dive (2 minutes)**
+## **[2:00 - 4:00] Backend Deep Dive (2 minutes)**
 
-**Speaker 2 (Backend Developer):**
+**Ayaad:**
 
-> "Let's dive deeper into our backend implementation."
+> "Chaliye ab main thora aur detail mein jaata hoon hamaray backend implementation ke baray mein."
 
-**[Show code: lib/models/txn.dart]**
+**[Code dikhao: lib/models/txn.dart]**
 
-> "Our Transaction model is the core data structure. It includes:
-> - Transaction ID for unique identification
+> "Hamara Transaction model core data structure hai. Ismein yeh sab shamil hai:
+> - Transaction ID unique identification ke liye
 > - Amount with decimal precision
-> - Category (Food, Travel, Shopping, Health, etc.)
-> - Transaction type (Income or Expense)
-> - Date and time stamps
-> - Optional notes and descriptions"
+> - Category jaise ke Food, Travel, Shopping, Health, waghaira
+> - Transaction type - Income ya Expense
+> - Date aur time stamps
+> - Optional notes aur descriptions"
 
-**[Show code: lib/models/utils/local_storage.dart]**
+**[Code dikhao: lib/models/utils/local_storage.dart]**
 
-> "For data persistence, we use SharedPreferences which provides:
-> - **Key-value storage** for user preferences
-> - **JSON serialization** for complex objects
-> - **Asynchronous operations** to prevent UI blocking
-> - **Data encryption** capabilities for sensitive information"
+> "Data persistence ke liye, main SharedPreferences use karta hoon jo yeh sab provide karta hai:
+> - **Key-value storage** user preferences ke liye
+> - **JSON serialization** complex objects ke liye
+> - **Asynchronous operations** taake UI block na ho
+> - **Data encryption** capabilities sensitive information ke liye"
 
-> "Our authentication flow works as follows:
-> 1. User enters credentials on the login screen
-> 2. Credentials are validated against stored user data
-> 3. Upon successful login, we store a session token
-> 4. The app checks this token on startup to auto-login users
-> 5. Users can logout, which clears the session data"
+> "Hamara authentication flow kuch is tarah kaam karta hai:
+> 1. User apnay credentials enter karta hai login screen par
+> 2. Credentials ko validate kiya jata hai stored user data ke against
+> 3. Successful login par, hum ek session token store karte hain
+> 4. App yeh token check karta hai startup par taake users automatically login ho jayein
+> 5. Users logout kar saktay hain, jo session data ko clear kar deta hai
+> 
+> Anoosha ne in tamam authentication flows ko extensively test kiya hai - valid credentials, invalid credentials, edge cases, aur security vulnerabilities - sab kuch check kiya hai."
 
-**[Show code: lib/main.dart lines 10-17]**
+**[Code dikhao: lib/main.dart lines 10-17]**
 
-> "As you can see in our main.dart file, we check the login status before the app even starts, providing a seamless user experience."
+> "Jaise ke aap dekh saktay hain hamaray main.dart file mein, main login status ko check karta hoon app start honay se pehlay hi, jo ke ek seamless user experience provide karta hai."
 
 ---
 
-### **[4:00 - 6:30] Frontend Implementation (2 minutes 30 seconds)**
+## **[4:00 - 6:30] Frontend Implementation (2 minutes 30 seconds)**
 
-**Speaker 3 (Frontend Developer):**
+**Ayaad:**
 
-> "Now let's explore the frontend. FinTrack features a clean, modern UI with a light theme that's easy on the eyes."
+> "Ab chaliye explore karte hain frontend ko. FinTrack mein ek clean aur modern UI hai with a light theme jo aankhon par bohot asaan hai."
 
-**[Show code: lib/theme/app_theme.dart]**
+**[Code dikhao: lib/theme/app_theme.dart]**
 
-> "We've implemented a centralized theming system using AppTheme class. This ensures consistency across all screens with:
+> "Maine ek centralized theming system implement kiya hai AppTheme class use karke. Yeh consistency ensure karta hai tamam screens par:
 > - Predefined color palette
 > - Typography standards
-> - Spacing and padding guidelines
+> - Spacing aur padding guidelines
 > - Reusable component styles"
 
-**[Show code: lib/models/screens/login_screens.dart]**
+**[Code dikhao: lib/models/screens/login_screens.dart]**
 
-> "The Login Screen is our entry point. It features:
-> - Clean, minimalist design
-> - Input validation for email and password
-> - Error handling with user-friendly messages
-> - Smooth navigation to signup or dashboard
-> - Remember me functionality"
+> "Login Screen hamara entry point hai. Ismein yeh features hain:
+> - Clean aur minimalist design
+> - Email aur password ke liye input validation
+> - User-friendly error messages
+> - Signup ya dashboard tak smooth navigation
+> - Remember me functionality
+> 
+> Anoosha ne is screen ko different devices par test kiya hai, various input combinations try kiye hain, aur UI responsiveness verify ki hai."
 
-**[Show code: lib/models/screens/dashboard_screen.dart]**
+**[Code dikhao: lib/models/screens/dashboard_screen.dart]**
 
-> "The Dashboard is the heart of our application. It displays:
-> - **Total Balance** calculated in real-time
+> "Dashboard hamaray application ka dil hai. Yeh display karta hai:
+> - **Total Balance** jo real-time mein calculate hota hai
 > - **Recent Transactions** with swipe-to-delete functionality
-> - **Quick Action Buttons** for adding income or expenses
-> - **Visual Summary** of financial status
-> - **Bottom Navigation** for easy access to all features"
+> - **Quick Action Buttons** income ya expenses add karnay ke liye
+> - **Visual Summary** financial status ka
+> - **Bottom Navigation** tamam features tak aasani se access ke liye"
 
-**[Show the transaction list implementation]**
+**[Transaction list implementation dikhao]**
 
-> "We use ListView.builder for efficient rendering of transactions, which ensures smooth scrolling even with hundreds of entries."
+> "Main ListView.builder use karta hoon efficient rendering ke liye transactions ka, jo smooth scrolling ensure karta hai chahe sau transactions hi kyun na hon."
 
-**Speaker 4 (UI/UX Developer):**
+> "Ab main highlight karta hoon hamara Analytics Screen."
 
-> "Let me highlight our Analytics Screen."
+**[Code dikhao: lib/models/screens/analytics_screen.dart]**
 
-**[Show code: lib/models/screens/analytics_screen.dart]**
+> "Analytics Screen powerful insights provide karta hai fl_chart library use karke:
+> - **Pie Chart** jo income vs expense distribution dikhata hai
+> - **Category Breakdown** color-coded segments ke saath
+> - **Time Period Filters** - Daily, Weekly, Monthly, Yearly
+> - **Interactive Charts** jo user touch par respond kartay hain
+> - **Percentage Calculations** har category ke liye"
 
-> "The Analytics Screen provides powerful insights using fl_chart library:
-> - **Pie Chart** showing income vs expense distribution
-> - **Category Breakdown** with color-coded segments
-> - **Time Period Filters** (Daily, Weekly, Monthly, Yearly)
-> - **Interactive Charts** that respond to user touch
-> - **Percentage Calculations** for each category"
-
-> "We also have dedicated screens for:
-> - **Wallet Management** - Track multiple accounts
-> - **Transaction History** - Detailed view with filters
-> - **Notifications** - Financial alerts and reminders
+> "Hamaray paas dedicated screens bhi hain:
+> - **Wallet Management** - Multiple accounts track karnay ke liye
+> - **Transaction History** - Filters ke saath detailed view
+> - **Notifications** - Financial alerts aur reminders
 > - **Profile Settings** - User customization options
-> - **Help & Support** - FAQs and contact information"
+> - **Help & Support** - FAQs aur contact information
+> 
+> Har screen ko Anoosha ne unit testing aur integration testing ke zariye validate kiya hai."
 
 ---
 
-### **[6:30 - 9:00] Live Demonstration (2 minutes 30 seconds)**
+## **[6:30 - 9:00] Live Demonstration (2 minutes 30 seconds)**
 
-**Speaker 1 (Team Lead):**
+**Ayaad:**
 
-> "Now, let's see FinTrack in action!"
+> "Ab chaliye, dekhte hain FinTrack ko action mein!"
 
-**[Start app demonstration]**
+**[App demonstration start karo]**
 
 **1. Login Flow (20 seconds)**
-> "First, I'll demonstrate the login process. Notice the smooth animations and input validation. If I enter incorrect credentials, we get a clear error message. Let me login with valid credentials... and we're in!"
+> "Pehlay, main demonstrate karunga login process. Dekhen smooth animations aur input validation. Agar main galat credentials enter karun, toh humein ek clear error message milta hai. Chaliye login karte hain sahi credentials ke saath... aur hum andar aa gaye!"
 
 **2. Dashboard Overview (30 seconds)**
-> "Here's our dashboard. You can see:
-> - My current balance of [amount]
-> - Recent transactions listed below
-> - The floating action button for quick transaction entry
-> - Bottom navigation for all major features"
+> "Yeh hai hamara dashboard. Aap dekh saktay hain:
+> - Mera current balance
+> - Neechay recent transactions ki list
+> - Quick transaction entry ke liye floating action button
+> - Tamam major features ke liye bottom navigation"
 
 **3. Adding a Transaction (40 seconds)**
-> "Let me add a new expense. I'll tap the '+' button...
-> - Select 'Expense'
-> - Enter amount: $50
-> - Choose category: Food
-> - Add description: 'Lunch with team'
-> - Select today's date
-> - Tap 'Save'
+> "Chaliye main add karta hoon ek naya expense. Main '+' button tap karunga...
+> - Select karunga 'Expense'
+> - Amount enter karunga: $50
+> - Category choose karunga: Food
+> - Description add karunga: 'Lunch with team'
+> - Aaj ki date select karunga
+> - Aur 'Save' tap karunga
 > 
-> And there it is! The transaction appears immediately, and our balance updates in real-time."
+> Aur dekhiye! Transaction foran appear ho gaya, aur hamara balance real-time mein update ho gaya. Yeh functionality bhi Anoosha ne thoroughly test ki hai - different amounts, categories, aur edge cases ke saath."
 
 **4. Analytics View (30 seconds)**
-> "Now let's check the Analytics screen. Here you can see:
-> - A beautiful pie chart showing spending distribution
-> - Food takes up 30% of my expenses
-> - Travel is 25%
-> - I can switch between different time periods
-> - The chart animates smoothly when data changes"
+> "Ab chaliye check karte hain Analytics screen. Yahan aap dekh saktay hain:
+> - Ek khoobsurat pie chart jo spending distribution dikhata hai
+> - Food meray expenses ka 30% hai
+> - Travel 25% hai
+> - Main different time periods ke darmiyan switch kar sakta hoon
+> - Chart smoothly animate hota hai jab data change hota hai"
 
 **5. Transaction Management (20 seconds)**
-> "Back to the dashboard, I can swipe left on any transaction to delete it. Watch... swipe... confirm... and it's gone! The balance updates automatically."
+> "Dashboard par wapas aa kar, main kisi bhi transaction ko left swipe karke delete kar sakta hoon. Dekhiye... swipe... confirm... aur delete ho gaya! Balance automatically update ho gaya."
 
 **6. Other Features (20 seconds)**
-> "Let me quickly show you:
-> - The Wallet screen with account balances
+> "Chaliye main jaldi se aap ko dikhata hoon:
+> - Wallet screen with account balances
 > - Notifications center
-> - Profile settings where users can update their information
-> - The Help & Support section with FAQs"
+> - Profile settings jahan users apni information update kar saktay hain
+> - Help & Support section with FAQs"
 
 ---
 
-### **[9:00 - 9:45] Technical Highlights & Challenges (45 seconds)**
+## **[9:00 - 9:45] Technical Highlights & Quality Assurance (45 seconds)**
 
-**Speaker 2 (Backend Developer):**
+**Ayaad:**
 
-> "Some technical highlights of our implementation:
-> - **Data Integrity:** We ensure all calculations are accurate using Dart's decimal precision
-> - **Performance:** Efficient data structures and lazy loading for smooth performance
-> - **Security:** User data is stored securely with encryption capabilities
-> - **Scalability:** Our architecture supports easy migration to cloud storage if needed"
+> "Kuch technical highlights hamari implementation ke:
+> - **Data Integrity:** Main ensure karta hoon ke saray calculations accurate hain Dart's decimal precision use karke
+> - **Performance:** Efficient data structures aur lazy loading se smooth performance milti hai
+> - **Security:** User data securely store hota hai encryption capabilities ke saath
+> - **Scalability:** Hamara architecture aasani se cloud storage par migrate ho sakta hai agar zaroorat parray"
 
-**Speaker 3 (Frontend Developer):**
+> "Frontend ki baat karein toh:
+> - **Responsive Design:** Different screen sizes par seamlessly kaam karta hai
+> - **State Management:** Efficient state updates se unnecessary rebuilds prevent hotay hain
+> - **User Experience:** Smooth animations aur intuitive navigation
+> - **Accessibility:** Clear labels aur proper contrast ratios"
 
-> "On the frontend:
-> - **Responsive Design:** Works seamlessly on different screen sizes
-> - **State Management:** Efficient state updates prevent unnecessary rebuilds
-> - **User Experience:** Smooth animations and intuitive navigation
-> - **Accessibility:** Clear labels and proper contrast ratios"
-
----
-
-### **[9:45 - 10:00] Conclusion (15 seconds)**
-
-**Speaker 1 (Team Lead):**
-
-> "Thank you for watching our FinTrack presentation! We've demonstrated a fully functional personal finance management application with robust backend architecture, beautiful frontend design, and practical features. Our app helps users take control of their finances with ease. We're happy to answer any questions!"
-
-**[All team members together]:**
-
-> "Thank you!"
+> "Aur sab se important baat - **Quality Assurance:** Anoosha Ali ne hamaray QA Engineer ki haisiyat se, har component ko development ke doran aur baad mein test kiya hai. Unit tests, integration tests, UI tests, performance tests - sab kuch. Unki rigorous testing ki wajah se hi hamara application itna stable aur reliable hai."
 
 ---
 
-## 📝 Video Recording Tips
+## **[9:45 - 10:00] Conclusion (15 seconds)**
 
-### Before Recording:
-1. **Test the app thoroughly** - Ensure all features work smoothly
-2. **Prepare sample data** - Have realistic transactions ready
-3. **Check screen recording** - Test audio and video quality
-4. **Rehearse timing** - Practice to stay within 10 minutes
-5. **Prepare backup** - Have a backup device ready
+**Ayaad:**
 
-### During Recording:
-1. **Clear audio** - Use a good microphone
-2. **Screen capture** - Use high-quality screen recording software
-3. **Smooth transitions** - Practice switching between speakers
-4. **Show code clearly** - Zoom in on important code sections
-5. **Demonstrate features** - Actually interact with the app
+> "Bohot shukriya hamari FinTrack presentation dekhnay ke liye! Maine aap ko ek fully functional personal finance management application demonstrate kiya hai jismein robust backend architecture, khoobsurat frontend design, aur practical features hain. Anoosha Ali ki comprehensive QA testing ki wajah se, hamara app high quality aur bug-free hai. Hamara app users ko unki finances ko aasani se control karnay mein madad karta hai. Main khushi se aap ke saray sawalat ka jawab dunga!"
 
-### Recommended Tools:
-- **Screen Recording:** OBS Studio, Camtasia, or built-in screen recorder
-- **Video Editing:** DaVinci Resolve, Adobe Premiere, or iMovie
-- **Audio:** Audacity for audio cleanup if needed
-
----
-
-## 👥 Team Member Responsibilities
-
-### Speaker 1 (Team Lead):
-- Introduction
-- Project overview
-- Live demonstration
-- Conclusion
-
-### Speaker 2 (Backend Developer):
-- Backend architecture explanation
-- Data models and persistence
-- Authentication flow
-- Technical highlights
-
-### Speaker 3 (Frontend Developer):
-- Frontend implementation
-- Screen-by-screen breakdown
-- State management
-- UI/UX features
-
-### Speaker 4 (UI/UX Developer):
-- Analytics and charts
-- Visual design elements
-- User experience features
-- Accessibility considerations
-
----
-
-## 🚀 Running the Project
-
-```bash
-# Install dependencies
-flutter pub get
-
-# Run on connected device/emulator
-flutter run
-
-# Build for Android
-flutter build apk
-
-# Build for iOS
-flutter build ios
-```
-
----
-
-## 📚 Additional Resources
-
-- **SRS Document:** `SRS Fintrack Release Version 5.3.0.pdf`
-- **Defense Questions:** `SRE_Defense_Questions.md`
-- **Flutter Documentation:** https://docs.flutter.dev/
-
----
-
-## 📄 License
-
-This project is developed as part of academic coursework for Software Requirement Engineering.
-
----
-
-**Good luck with your presentation! 🎉**
+> "Bohot bohot shukriya! Thank you!"

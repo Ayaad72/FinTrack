@@ -14,7 +14,6 @@ class LocalStorage {
     await prefs.setBool('loggedIn', true);
   }
 
-  /// Authenticates user by matching email and password.
   static Future<bool> login(String email, String password) async {
     final prefs = await SharedPreferences.getInstance();
     final savedEmail = prefs.getString('email');
