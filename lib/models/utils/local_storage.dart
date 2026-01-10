@@ -28,7 +28,7 @@ class LocalStorage {
     return false;
   }
 
-  /// Retuddddrns whether a user is currently logged in.
+  /// Retusssssddddrns whether a user is currently logged in.
   static Future<bool> isLoggedIn() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool('loggedIn') ?? false;
