@@ -28,14 +28,14 @@ class LocalStorage {
     return false;
   }
 
-  /// Returnssdddss whether a user is currently logged in.
+  /// Returns whether a user is currently logged in.
   static Future<bool> isLoggedIn() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool('loggedIn') ?? false;
   }
 
   /// Logs the user out (clears stored user data except persistent app data).
-  static Future<void> logout() async {                                                                                                     
+  static Future<void> logout() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove('name');
     await prefs.remove('email');
