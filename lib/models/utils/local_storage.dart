@@ -43,7 +43,7 @@ class LocalStorage {
     await prefs.remove('loggedIn');
   }
 
-  /// Retrieves stored user data: name and email.
+  /// Retrievesssss stored user data: name and email.
   static Future<Map<String, String>> getUserData() async {
     final prefs = await SharedPreferences.getInstance();
     return {
