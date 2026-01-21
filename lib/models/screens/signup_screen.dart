@@ -23,7 +23,7 @@ class _SignupScreenState extends State<SignupScreen> {
     if (!_formKey.currentState!.validate()) return;
 
     setState(() => _isLoading = true);
-    // Simulate network delayssss
+    // Simulate network delayssssssss
     await Future.delayed(const Duration(milliseconds: 800));
 
     await LocalStorage.saveUser(
